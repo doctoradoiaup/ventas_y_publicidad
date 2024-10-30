@@ -5,7 +5,10 @@ Created on Mon Oct 21 14:14:28 2024
 @author: jperezr
 """
 
-
+st.title("Análisis de Ventas y Publicidad con Modelo de Regresión lineal multiple")
+st.write("""
+Sube tus datos de ventas y publicidad en un archivo Excel y selecciona columnas relacionadas con publicidad 
+""")
 
 import pandas as pd
 import numpy as np
