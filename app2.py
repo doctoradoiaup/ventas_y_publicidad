@@ -5,8 +5,6 @@ Created on Mon Oct 21 14:14:28 2024
 @author: jperezr
 """
 
-
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -19,7 +17,6 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.preprocessing import PolynomialFeatures
-
 
 # Estilo de fondo
 page_bg_img = """
@@ -37,12 +34,10 @@ background-size:16px 16px;
 
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
-st.title("Análisis de Ventas y Publicidad con Modelo de Regresión lineal multiple")
+st.title("Análisis de Ventas y Publicidad con Modelo de Regresión Lineal Múltiple")
 st.write("""
-Sube tus datos de ventas y publicidad en un archivo Excel y selecciona columnas relacionadas con publicidad 
+Sube tus datos de ventas y publicidad en un archivo Excel y selecciona columnas relacionadas con publicidad.
 """)
-
-
 
 # Leer el archivo Excel
 @st.cache_data
@@ -158,28 +153,24 @@ if file:
         plt.plot([y.min(), y.max()], [y.min(), y.max()], color='red', linewidth=2)  # Línea de 45 grados
         st.pyplot(plt)
 
-
-
 # Sección de ayuda en la barra lateral
 st.sidebar.markdown(
     """
     ### Ayuda
-    Esta aplicación permite realizar un **sorteo aleatorio** de folios basado en un archivo de Excel que contiene una lista de nombres y folios.
+    Esta aplicación permite realizar análisis de ventas y publicidad utilizando varios modelos de regresión.
 
     **Instrucciones:**
-    1. **Carga tu archivo Excel** con columnas 'Nombre' y 'Folio'.
-    2. **Inicia el sorteo** haciendo clic en "Iniciar sorteo". La aplicación mostrará un desfile de folios antes de seleccionar uno al azar.
-    3. **Ganador:** Al finalizar, se mostrará el nombre y folio del ganador.
+    1. **Carga tu archivo Excel** con las columnas relacionadas con ventas y publicidad.
+    2. **Selecciona las columnas** para las variables independientes y el modelo de regresión.
+    3. **Ajusta el modelo** y revisa los resultados, incluyendo el error cuadrático medio y el R^2.
+    4. **Consulta el gráfico** para visualizar el rendimiento del modelo.
 
-    **Requisitos del archivo:** 
-    - El archivo debe contener las columnas 'Nombre' y 'Folio'.
+    **Requisitos del archivo:**
+    - El archivo debe contener al menos las columnas 'Ventas', 'TV', 'Radio', y 'Periodicos'.
     
-    Si el archivo no cumple con los requisitos, se mostrará un mensaje de error.
-
     ---
     **Desarrollado por: Javier Horacio Pérez Ricárdez**
     """,
     unsafe_allow_html=True
 )
-
 
