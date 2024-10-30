@@ -157,3 +157,29 @@ if file:
         plt.title(f"Gráfico de dispersión: Ventas reales vs Ventas predichas ({model_choice})")
         plt.plot([y.min(), y.max()], [y.min(), y.max()], color='red', linewidth=2)  # Línea de 45 grados
         st.pyplot(plt)
+
+
+
+# Sección de ayuda en la barra lateral
+st.sidebar.markdown(
+    """
+    ### Ayuda
+    Esta aplicación permite realizar un **sorteo aleatorio** de folios basado en un archivo de Excel que contiene una lista de nombres y folios.
+
+    **Instrucciones:**
+    1. **Carga tu archivo Excel** con columnas 'Nombre' y 'Folio'.
+    2. **Inicia el sorteo** haciendo clic en "Iniciar sorteo". La aplicación mostrará un desfile de folios antes de seleccionar uno al azar.
+    3. **Ganador:** Al finalizar, se mostrará el nombre y folio del ganador.
+
+    **Requisitos del archivo:** 
+    - El archivo debe contener las columnas 'Nombre' y 'Folio'.
+    
+    Si el archivo no cumple con los requisitos, se mostrará un mensaje de error.
+
+    ---
+    **Desarrollado por: Javier Horacio Pérez Ricárdez**
+    """,
+    unsafe_allow_html=True
+)
+
+
